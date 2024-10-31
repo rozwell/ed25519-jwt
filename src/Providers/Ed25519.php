@@ -1,6 +1,6 @@
 <?php
 
-namespace Rozwell\Ed25519JWT\Providers\JWT;
+namespace Rozwell\Ed25519JWT\Providers;
 
 use Illuminate\Support\Facades\Storage;
 use Lcobucci\JWT\Signer\Eddsa;

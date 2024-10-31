@@ -2,10 +2,9 @@
 
 namespace Rozwell\Ed25519JWT\Providers;
 
-use Rozwell\Ed25519JWT\Commands\JWTKeysCommand;
-use Rozwell\Ed25519JWT\Providers\JWT\Ed25519;
 use Illuminate\Filesystem\FilesystemServiceProvider;
 use Illuminate\Support\ServiceProvider;
+use Rozwell\Ed25519JWT\Commands\JWTKeysCommand;
 
 class Ed25519JWTServiceProvider extends ServiceProvider
 {
