@@ -14,10 +14,7 @@ class Ed25519JWTServiceProvider extends ServiceProvider
         // Make sure Filesystem is already registered:
         $this->app->register(FilesystemServiceProvider::class);
 
-        // Add custom disk for the keys:
-        $this->mergeConfigFrom(
-            __DIR__.'/../config/keys.php', 'filesystems.disks'
-        );
+        $this->configureDisks();
 
         // Replace JWT Provider:
         $this->app->singleton('tymon.jwt.provider.jwt', function ($app) {
@@ -36,5 +33,13 @@ class Ed25519JWTServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+    }
+
+    protected function configureDisks()
+    {
+        // Add custom keys disk
+        $this->mergeConfigFrom(
+            __DIR__.'/../../config/disks.php', 'filesystems.disks'
+        );
     }
 }
