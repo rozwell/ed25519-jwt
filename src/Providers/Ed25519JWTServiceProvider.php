@@ -15,19 +15,8 @@ class Ed25519JWTServiceProvider extends ServiceProvider
         $this->app->register(FilesystemServiceProvider::class);
 
         $this->configureDisks();
-
-        // Replace JWT Provider:
-        $this->app->singleton('tymon.jwt.provider.jwt', function ($app) {
-            return new Ed25519($app->config->get('jwt.algo', 'Ed25519'), [
-                'private' => $app->config->get('jwt.keys.private', 'ed25519.private'),
-                'public'  => $app->config->get('jwt.keys.public', 'ed25519.public'),
-            ]);
-        });
-
-        // Register jwt:keys Command:
-        $this->commands([
-            JwtKeysCommand::class,
-        ]);
+        $this->registerProviders();
+        $this->registerCommands();
     }
 
     public function boot()
@@ -41,5 +30,24 @@ class Ed25519JWTServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(
             __DIR__.'/../../config/disks.php', 'filesystems.disks'
         );
+    }
+
+    protected function registerCommands()
+    {
+        // Register jwt:keys Command
+        $this->commands([
+            JwtKeysCommand::class,
+        ]);
+    }
+
+    protected function registerProviders()
+    {
+        // Replace JWT Provider
+        $this->app->singleton('tymon.jwt.provider.jwt', function ($app) {
+            return new Ed25519($app->config->get('jwt.algo', 'Ed25519'), [
+                'private' => $app->config->get('jwt.keys.private', 'ed25519.private'),
+                'public'  => $app->config->get('jwt.keys.public', 'ed25519.public'),
+            ]);
+        });
     }
 }
