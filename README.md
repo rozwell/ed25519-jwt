@@ -19,7 +19,7 @@ JWT_PRIVATE_KEY=ed25519.private
 
 ### 3. Generate keys with command:
 ```shell
-artisan jwt:keys
+php artisan jwt:keys
 ```
 
 ### 4. Ignore keys files
