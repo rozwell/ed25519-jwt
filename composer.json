@@ -1,7 +1,7 @@
 {
     "name": "rozwell/ed25519-jwt",
     "type": "package",
-    "description": "Instant Lumen v9+ Ed25519 support for tymon/jwt-auth",
+    "description": "Instant Laravel/Lumen v9+ Ed25519 support for tymon/jwt-auth",
     "keywords": [
         "JWT",
         "Ed25519",
