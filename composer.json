@@ -1,0 +1,46 @@
+{
+    "name": "rozwell/ed25519-jwt",
+    "type": "package",
+    "description": "Instant Lumen v9+ Ed25519 support for tymon/jwt-auth",
+    "keywords": [
+        "JWT",
+        "Ed25519",
+        "Laravel",
+        "Lumen"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "rozwell",
+            "email": "rozwell69@gmail.com"
+        }
+    ],
+    "version": "1.0.0",
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^8.0",
+        "ext-openssl": "*",
+        "ext-sodium": "*",
+        "illuminate/console": "^9.0||^10.0||^11.0",
+        "illuminate/filesystem": "^9.0||^10.0||^11.0",
+        "illuminate/support": "^9.0||^10.0||^11.0",
+        "lcobucci/jwt": "^4.0",
+        "tymon/jwt-auth": "^2.0"
+    },
+    "suggest": {
+        "laravel/framework": "Required if using this package with Laravel",
+        "laravel/lumen-framework": "Required if using this package with Lumen"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rozwell\\Ed25519Jwt\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rozwell\\Ed25519Jwt\\Providers\\Ed25519JWTServiceProvider"
+            ]
+        }
+    }
+}
