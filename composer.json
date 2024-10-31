@@ -15,7 +15,7 @@
             "email": "rozwell69@gmail.com"
         }
     ],
-    "version": "1.0.4",
+    "version": "1.0.5",
     "minimum-stability": "dev",
     "require": {
         "php": "^8.0",
@@ -33,13 +33,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Rozwell\\Ed25519Jwt\\": "src/"
+            "Rozwell\\Ed25519JWT\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Rozwell\\Ed25519Jwt\\Providers\\Ed25519JWTServiceProvider"
+                "Rozwell\\Ed25519JWT\\Providers\\Ed25519JWTServiceProvider"
             ]
         }
     }
