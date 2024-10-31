@@ -3,7 +3,7 @@ Instant Laravel/Lumen v9+ Ed25519 support for tymon/jwt-auth
 
 ## Installation
 
-### 1. Register service provider
+### 1. Register service provider *(Lumen only)*
 Add below line in `bootstrap/app.php` **Service Providers** section:
 ```php
 $app->register(Rozwell\Ed25519JWT\Providers\Ed25519JWTServiceProvider::class);
